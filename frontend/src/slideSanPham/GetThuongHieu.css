@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap');
+.container_get {
+    display: flex;
+    justify-content: center; /* Centers the input horizontally */
+    align-items: center; /* Centers the input vertically if needed */
+    margin-top: 20px; /* Adds some space above the input field */
+  }
+  .hienthi_getThuonghieu{
+    font-family: 'Roboto', sans-serif;
+    margin-left: 10px;
+  }
+  
+  /* Styling for the input field */
+  .input_getThuonghieu {
+    width: 100%; /* Takes full width */
+    max-width: 400px; /* Limits the maximum width of the input */
+    padding: 12px 20px; /* Adds padding inside the input */
+    font-size: 16px; /* Adjusts the font size */
+    border-radius: 5px; /* Rounds the corners */
+    border: 2px solid #ccc; /* Light border for the input field */
+    outline: none; /* Removes the default outline */
+    transition: all 0.3s ease; /* Smooth transition for border and size changes */
+   
+   
+  }
+  
+  .input_getThuonghieu:focus {
+    border-color: #e70505; /* Changes the border color to light red when focused */
+    border-width: 3px; /* Increases the border width when focused */
+    box-shadow: 0 0 5px rgba(255, 127, 127, 0.6); /* Adds a light red shadow */
+    color:#e70505
+  }
+  
+  /* Placeholder text styling */
+  .input_getThuonghieu::placeholder {
+    color: #888; /* Lighter color for the placeholder text */
+    font-style: italic; /* Italicizes the placeholder text */
+  }
+  

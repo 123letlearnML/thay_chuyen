@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Signup Form</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="/endpoints/css/style2.css">
+
+</head>
+<body>
+<section>
+    <form id="signup-form">
+        <h1>Sign Up</h1>
+        <div class="inputbox">
+            <ion-icon name="person-outline"></ion-icon>
+            <input type="text" id="username" name="username" required>
+            <label for="username">Name</label>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="mail-outline"></ion-icon>
+            <input type="email" id="email" name="email" required>
+            <label for="email">Email</label>
+        </div>
+
+        <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="password" name="password" required>
+            <label for="password">Password</label>
+        </div>
+        <div class="inputbox">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+            <input type="password" id="passwordcon" name="passwordcon" required>
+            <label for="passwordcon">Confirm Password</label>
+        </div>
+        <button id="submit" type="submit">Sign Up</button>
+        <div class="register">
+            <p>Already have an account? <a href="/endpoints/req/login">Log In</a></p>
+        </div>
+    </form>
+</section>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const signupForm = document.getElementById("signup-form");
+        signupForm.addEventListener('submit', function(event) {
+            event.preventDefault(); // Ngăn không cho form submit theo cách thông thường
+
+            // Lấy giá trị từ form
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('passwordcon').value;
+            const email = document.getElementById('email').value;
+
+            // Kiểm tra password và confirmPassword
+            if(password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
+
+            // Tạo đối tượng dữ liệu JSON
+            const data = {
+                ten: username,
+                matKhau: password,
+                email: email
+            };
+
+            // Gửi yêu cầu POST với kiểu dữ liệu JSON
+            fetch('/endpoints/req/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json' // Đảm bảo gửi dữ liệu dưới dạng JSON
+                },
+                body: JSON.stringify(data) // Chuyển đối tượng data thành JSON string
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.error ){
+                    alert(data.error);
+                }else {
+                    alert('Signup successful!');
+                    // Điều hướng tới trang khác sau khi đăng ký thành công
+                    window.location.href = data.message;
+                }
+            })
+            .catch(error => {
+                alert('Error: ' + error);
+                console.error('Error:', error);
+            });
+        });
+    });
+</script>
+</body>
+</html>

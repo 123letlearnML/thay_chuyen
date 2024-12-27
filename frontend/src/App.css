@@ -1,0 +1,43 @@
+.h1_banner_main {
+    color: rgb(38, 21, 21); /* Initial color */
+    text-align: center;
+    margin: 50px 10px;
+    font-family: sans-serif;
+    opacity: 0; /* Start as invisible */
+    transform: translateX(-100%); /* Start from the left */
+    animation: slideIn 2s forwards, colorChange 3s infinite; /* Apply both animations */
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%); /* Start off-screen to the left */
+    }
+    50% {
+        opacity: 0.5; /* Fade in */
+        transform: translateX(10%); /* Slightly move towards the center */
+    }
+    100% {
+        opacity: 1; /* Fully visible */
+        transform: translateX(0); /* Final position at the center */
+    }
+}
+
+/* Color change animation */
+@keyframes colorChange {
+    0% {
+        color: rgb(38, 21, 21); /* Initial black */
+    }
+    50% {
+        color: rgb(195, 53, 53); /* Transition to red */
+    }
+    100% {
+        color: rgb(38, 21, 21); /* Back to black */
+    }
+}
+
+
+
+
+

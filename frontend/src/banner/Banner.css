@@ -1,0 +1,22 @@
+
+* {
+  margin: 0; /* Loại bỏ margin mặc định của tất cả các phần tử */
+  padding: 0; /* Loại bỏ padding mặc định */
+  box-sizing: border-box;
+  z-index: 0;
+}
+
+/* Đảm bảo phần tử <html> và <body> cũng có chiều rộng đầy đủ */
+html, body {
+  width: 100%;
+  height: 100%; /* Đảm bảo body và html có chiều cao đầy đủ */
+  overflow-x: hidden; /* Ngăn ngừa cuộn ngang */
+}
+
+/* Đảm bảo ảnh banner chiếm 100% chiều rộng */
+.img_banner {
+  width: 100%;      /* Chiếm toàn bộ chiều rộng màn hình */
+  height: auto;     /* Chiều cao tự động điều chỉnh theo tỉ lệ ảnh */
+  object-fit: cover; /* Đảm bảo ảnh không bị kéo dãn, lấp đầy vùng chứa */
+  display: block;    /* Loại bỏ khoảng trắng thừa dưới ảnh */
+}

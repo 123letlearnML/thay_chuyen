@@ -1,0 +1,184 @@
+/* ProductDetail.css */
+
+.product-detail {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.product-image {
+    width: 60%;
+    padding-top: 45%; /* Tỉ lệ 4:3 (4/3 = 1.33, 100% / 1.33 = ~75%) */
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+
+.product-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px; /* Giới hạn chiều rộng của thông tin sản phẩm */
+}
+
+.product-info h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.product-info p {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.5;
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+    color: #e74c3c;
+    margin-top: 10px;
+}
+
+.brand, .stock {
+    font-size: 14px;
+    color: #555;
+}
+
+.product-image:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.product-info .price:hover {
+    color: #d9534f;
+    cursor: pointer;
+}
+
+.product-info .stock {
+    font-size: 14px;
+    color: #999;
+}
+
+@media (max-width: 768px) {
+    .product-detail {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .product-image {
+        width: 100%;
+        padding-top: 75%; /* Giữ tỉ lệ 4:3 trên màn hình nhỏ */
+    }
+
+    .product-info {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+
+.back-button {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.back-icon {
+    font-size: 24px;
+    margin-right: 8px;
+}
+
+.cart-icon {
+    font-size: 24px;
+    color: #000; /* Or any color you want for the icon */
+    margin-top: 10px;
+}
+
+
+
+.soLuongThat {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  
+  /* Style for the YouTube link */
+  .hinhanhurl {
+    font-size: 14px;
+    color: #007bff;
+    margin-bottom: 20px;
+  }
+  
+  .hinhanhurl a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: 600;
+  }
+  
+  .hinhanhurl a:hover {
+    text-decoration: underline;
+    color: #0056b3;
+  }
+  
+  /* Style for the "Mua Ngay" button */
+  .Mua_ngay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    text-align: center;
+  }
+  
+  .Mua_ngay a {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .Mua_ngay a:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .Mua_ngay a .fa-cart-shopping {
+    margin-left: 8px;
+    font-size: 20px;
+    transition: transform 0.3s;
+  }
+  
+  .Mua_ngay a:hover .fa-cart-shopping {
+    transform: translateX(5px);
+  }
+  
+  /* Hover effects */
+  .Mua_ngay:hover {
+    background-color: #218838;
+    transform: scale(1.05);
+  }
+  
+  .Mua_ngay a:hover .fa-cart-shopping {
+    transform: translateX(5px);
+  }

@@ -1,0 +1,88 @@
+/* Cấu trúc chung của trang
+.body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f9;
+    color: #333;
+    min-height: 100vh; /* Chiếm toàn bộ chiều cao màn hình */
+}
+
+/* Khung chứa nội dung chính */
+.container {
+    max-width: 1200px; /* Mở rộng chiều rộng của container */
+    margin: 50px auto;
+    padding: 40px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+/* Tiêu đề chính */
+h1 {
+    text-align: center;
+    font-size: 48px; /* Tăng kích thước chữ tiêu đề chính */
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Các phần section */
+.section {
+    background-color: #ffffff;
+    padding: 30px; /* Tăng padding trong section */
+    border-radius: 8px;
+    margin-bottom: 40px; /* Tăng khoảng cách giữa các section */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.section:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Tiêu đề phụ của mỗi phần */
+h2 {
+    font-size: 32px; /* Tăng kích thước chữ tiêu đề phụ */
+    font-weight: bold;
+    color: #007bff;
+    margin-bottom: 20px;
+}
+
+/* Nội dung mô tả trong mỗi phần */
+p {
+    font-size: 20px; /* Tăng kích thước chữ trong phần nội dung */
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    margin-top: 60px;
+    font-size: 18px; /* Tăng kích thước chữ trong footer */
+    color: #888;
+}
+
+footer a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    color: #0056b3;
+}
+
+/* Thêm màu sắc và chuyển động cho các link */
+a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0056b3;
+} */

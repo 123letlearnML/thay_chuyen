@@ -1,0 +1,87 @@
+Reset các kiểu mặc định của trình duyệt
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Kiểu cho toàn bộ trang */
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+  }
+  
+  /* Phần header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Thêm bóng đổ nhẹ cho header */
+  }
+  
+  header h1 {
+    font-size: 36px;
+    font-weight: bold; /* Đảm bảo tiêu đề đậm */
+    letter-spacing: 1px; /* Thêm khoảng cách giữa các chữ */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Thêm hiệu ứng bóng đổ cho chữ */
+    color: #28a745; /* Chỉnh màu chữ thành xanh */
+  }
+  
+  header p {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: 300; /* Giảm độ đậm cho đoạn văn */
+    color: #28a745; /* Chỉnh màu chữ thành xanh */
+  }
+  
+  /* Phần nội dung chính */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .policy {
+    background-color: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .policy h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: #333;
+  }
+  
+  .policy p, .policy ul, .policy ol {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+  
+  .policy ul, .policy ol {
+    margin-left: 20px;
+  }
+  
+  .policy ul li, .policy ol li {
+    margin-bottom: 10px;
+  }
+  
+  /* Phần footer */
+  footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    margin-top: 40px;
+  }
+  
+  footer p {
+    font-size: 14px;
+  }
+  

@@ -1,0 +1,159 @@
+/* General Styles */
+.giohang-container {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    color: #333;
+    text-align: center;
+  }
+  
+  .empty-cart-message, .no-purchased-message {
+    text-align: center;
+    font-size: 18px;
+    color: #666;
+  }
+  
+  /* Cart and Items Styles */
+  .cart-container {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Box shadow for cart container */
+    transition: box-shadow 0.3s ease-in-out; /* Smooth transition for hover effect */
+  }
+  
+  .cart-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increased box-shadow on hover */
+  }
+  
+  .cart-items-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .cart-item:hover {
+    transform: translateY(-5px); /* Elevation effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow to each cart item on hover */
+  }
+  
+  .item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .item-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .item-price, .item-stock, .item-quantity, .item-total {
+    font-size: 16px;
+  }
+  
+  .quantity-input {
+    width: 60px;
+    padding: 5px;
+    margin-left: 10px;
+  }
+  
+  .remove-btn {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+    margin-top: 10px;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  }
+  
+  .remove-btn:hover {
+    background-color: #c0392b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+  
+  .complete-purchase-btn {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 15px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  .complete-purchase-btn:hover {
+    background-color: #2ecc71;
+    transform: translateY(-2px); /* Elevate button slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+  
+  /* Purchased Items Styles */
+  .purchased-items-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .purchased-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+    transition: transform 0.2s ease-in-out; /* Smooth hover effect */
+  }
+  
+  .purchased-item:hover {
+    transform: translateY(-5px); /* Elevation effect on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add box-shadow to each purchased item on hover */
+  }
+  
+  .purchased-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .purchased-item-name {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .purchased-item-price, .purchased-item-quantity, .purchased-item-total {
+    font-size: 16px;
+  }
+  
+
+  .clear-history-btn {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+  }
+  
+  .clear-history-btn:hover {
+    background-color: #e67e22;
+    transform: translateY(-2px); /* Elevate button slightly on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+  }
+  

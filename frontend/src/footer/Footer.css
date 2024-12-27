@@ -1,0 +1,199 @@
+/* Footer container */
+.footer {
+    background-color: rgba(0, 0, 0, 0.815); /* Nền mờ */
+    color: #fff;
+    padding: 40px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    font-size: 16px;
+
+    background-size: cover;
+    background-position: center;
+  }
+  
+  /* Content area inside footer */
+  .footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 20px;
+  }
+  
+  /* Left part of the footer */
+  .footer-left p {
+    margin: 0;
+  }
+  
+  /* Links in the center of the footer */
+  .footer-links {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .footer-links a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for links */
+  .footer-links a:hover {
+    color: #3498db;
+    transform: translateY(-3px); /* Move the link slightly up */
+  }
+  
+  .footer-links a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
+    bottom: 0;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-links a:hover::after {
+    transform: scaleX(1); /* Underline effect */
+  }
+  
+  /* Social icons in the right part of the footer */
+  .social-icons {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: #ecf0f1;
+    font-size: 24px;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  /* Hover effect for social media icons */
+  .social-icons a:hover {
+    color: #3498db;
+    transform: scale(1.2); /* Slightly enlarge the icon */
+  }
+  
+  /* Responsive design: on small screens, stack the footer content */
+  @media (max-width: 768px) {
+    .footer-content {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .footer-left,
+    .footer-center,
+    .footer-right {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  
+    .footer-links {
+      flex-direction: column;
+  
+    }
+  
+    .social-icons {
+      justify-content: center;
+    }
+    
+  }
+
+  /* Section for images inside footer */
+  .footer-images {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Khoảng cách giữa các ảnh */
+    align-items: center; /* Căn giữa các phần tử theo chiều dọc */
+    width: 100%;
+    flex-wrap: nowrap; /* Ngăn chặn việc xuống dòng */
+    margin-top: 20px;
+  }
+  
+  .image-container {
+    position: relative;
+    width: 24%; /* Mỗi ảnh chiếm 24% chiều rộng */
+    height: 200px; /* Chiều cao nhỏ lại cho mỗi khối ảnh */
+    overflow: hidden;
+    border-radius: 12px; /* Bo tròn góc ảnh */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tạo bóng cho khối ảnh */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Đảm bảo ảnh không bị méo, luôn phủ hết container */
+    filter: brightness(0.7); /* Làm mờ ảnh để chữ nổi bật hơn */
+    border-radius: 12px; /* Bo tròn góc ảnh */
+    transition: transform 0.3s ease;
+  }
+  
+  .image-container .image-text {
+    position: absolute;
+    top: -2px; /* Đặt chữ trên ảnh, ngoài khối ảnh */
+    left: 20px; /* Căn chữ từ bên trái */
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Tạo bóng cho chữ */
+    background-color: rgba(0, 0, 0, 0.5); /* Nền mờ cho chữ */
+    padding: 5px 10px; /* Padding để chữ không bị dính vào các cạnh */
+    border-radius: 4px; /* Làm mềm các góc của nền chữ */
+    z-index: 10; /* Đảm bảo chữ nằm trên ảnh */
+    transition: transform 0.3s ease, color 0.3s ease, background-color 0.3s ease;
+  }
+  
+  /* Hiệu ứng hover cho ảnh và chữ */
+  .image-container:hover {
+    transform: scale(1.05); /* Phóng to ảnh khi hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Tạo bóng đổ cho ảnh khi hover */
+  }
+  
+  .image-container:hover img {
+    filter: brightness(1); /* Làm sáng ảnh khi hover */
+  }
+  
+  .image-container:hover .image-text {
+    color: #3498db; /* Thay đổi màu chữ khi hover */
+    background-color: rgba(0, 0, 0, 0.7); /* Làm nền chữ tối lại */
+    transform: translateY(-5px); /* Di chuyển chữ lên một chút khi hover */
+  }
+  
+  /* Hiệu ứng click */
+  .image-container:active {
+    transform: scale(0.98); /* Làm nhỏ lại ảnh khi click */
+  }
+  
+  .image-container:active img {
+    transform: scale(0.98); /* Làm nhỏ ảnh khi click */
+  }
+  
+  .image-container:active .image-text {
+    transform: translateY(2px); /* Di chuyển chữ xuống một chút khi click */
+  }
+  
+  /* Responsive design: khi màn hình nhỏ hơn 768px, các ảnh sẽ xếp thành cột */
+  @media (max-width: 768px) {
+    .footer-images {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .image-container {
+      width: 80%; /* Khi màn hình nhỏ, ảnh sẽ chiếm 80% chiều rộng */
+      margin-bottom: 20px; /* Khoảng cách giữa các ảnh */
+    }
+  }
+  

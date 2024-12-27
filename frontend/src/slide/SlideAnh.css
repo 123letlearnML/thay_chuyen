@@ -1,0 +1,100 @@
+/* Main container for slider and text */
+.slider-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+}
+
+.anh1 {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the image */
+.anh1:hover {
+    transform: scale(1.05); /* Slightly zoom the image */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+/* Clicking the image (active state) */
+.anh1:active {
+    transform: scale(1); /* Reset the scale to normal when clicked */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15); /* Smaller shadow when clicked */
+}
+
+.slider {
+    flex: 2;
+}
+
+.slider_vanban {
+    flex: 1;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Hover effect for text container */
+.slider_vanban:hover {
+    background-color: #e6e6e6; /* Slightly darker background on hover */
+}
+
+.slider_vanban h1 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    transition: color 0.3s ease; /* Smooth color change */
+}
+
+/* Hover effect for h1 */
+.slider_vanban h1:hover {
+    color: #0066cc; /* Change color to blue on hover */
+}
+
+/* List styles */
+.slider_vanban ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #444;
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Hover effect for list items */
+.slider_vanban ul li:hover {
+    color: #0066cc; /* Change text color on hover */
+    cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.slider_vanban li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+/* Hover effect for closing h2 text */
+.slider_vanban h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #5cb85c;
+    margin-top: 20px;
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for h2 */
+.slider_vanban h2:hover {
+    color: #4cae4c; /* Darker green on hover */
+}
+
+/* Clicking effect for h2 */
+.slider_vanban h2:active {
+    color: #3e8e41; /* Even darker green when clicked */
+}

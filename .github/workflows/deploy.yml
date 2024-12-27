@@ -1,0 +1,93 @@
+name: Vite deployment
+
+on:
+  push:
+    branches: [ "production" ]
+  pull_request:
+    branches: [ "production" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Deploy using SSH and check if the directory exists
+      - name: Deploy using ssh
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: 22
+          script: |
+            # MYSQL_PASSWORD=$(cat /home/data/password.txt)
+            export MYSQL_PASSWORD=${{ secrets.MYSQL_PASSWORD }}
+            export MYSQL_USER=${{ secrets.MYSQL_USER }}
+            export MYSQL_DATABASE=${{ secrets.MYSQL_DATABASE }}
+            if command -v docker &> /dev/null; then
+              echo "Docker is installed, proceeding with deployment."
+
+              cd /home/data
+              git pull
+              COMMIT_MESSAGE=$(git log -1 --pretty=%B)
+              echo "Commit message: $COMMIT_MESSAGE"
+              cd /home/data/frontend
+              mkdir pm2_data
+              if [[ "$COMMIT_MESSAGE" == *"restart-nodejs"* ]]; then
+                echo "Restarting Node.js container..."
+                docker restart nodejs
+              fi
+
+              if [[ "$COMMIT_MESSAGE" == *"restart-nginx"* ]]; then
+                echo "Restarting Nginx container..."
+                docker restart nginx
+              fi
+
+              if [[ "$COMMIT_MESSAGE" == *"restart-spring"* ]]; then
+                echo "Restarting Spring container..."
+                docker restart springboot
+              fi
+                  if [[ "$COMMIT_MESSAGE" == *"spring-export"* ]]; then
+                echo "Restarting Spring container..."
+                docker restart springboot
+                docker exec -i mysql mysql -u doai123 -p${MYSQL_PASSWORD} btl_web < /home/data/sql/data.sql
+              fi
+                if [[ "$COMMIT_MESSAGE" == *"export"* ]]; then
+                echo "export..........."
+                docker exec -i mysql mysql -u doai123 -p${MYSQL_PASSWORD} btl_web < /home/data/sql/data.sql
+              fi
+               if [[ "$COMMIT_MESSAGE" == *"restart-all"* ]]; then
+                docker restart nodejs
+                docker restart nginx
+                docker restart springboot
+              fi
+               if [[ "$COMMIT_MESSAGE" == *"rebuild"* ]]; then
+                docker-compose build
+                docker-compose up -d
+              fi
+
+            else
+              echo "Docker is not installed. Exiting deployment."
+              mkdir /home
+              cd /home
+              apt update
+              apt install snapd
+              # systemctl enable snapd
+              # systemctl start snapd
+              # systemctl enable snapd.socket
+              # systemctl start snapd.socket
+              snap install docker
+              # systemctl enable docker
+              # systemctl start docker
+              systemctl status docker
+              # sleep 10s
+              mkdir data
+              cd /home/data
+              git clone --branch production --single-branch https://github.com/doai123/web.git .
+              docker-compose up -d
+              sleep 60
+              docker exec -i mysql mysql -u doai123 -p${MYSQL_PASSWORD} btl_web < /home/data/sql/data.sql
+            fi

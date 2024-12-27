@@ -1,0 +1,40 @@
+name: Vite Testing
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend
+    steps:
+      # Step 1: Checkout code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # Bạn có thể thay đổi version Node.js theo yêu cầu
+          cache-dependency-path: './frontend/package-lock.json'
+          cache: 'npm'
+      # Step 3: Install dependencies using npm ci
+      - name: Install dependencies
+        run: npm ci
+
+      # Step 4: Build project (only if build script is present)
+      - name: Build project
+        run: npm run build --if-present
+
+      # Step 5: Run tests
+      - name: Run tests
+        run: npm test
+      - name: test e2e (cypress)
+        run: npx cypress run
+      

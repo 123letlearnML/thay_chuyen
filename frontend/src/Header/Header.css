@@ -1,0 +1,160 @@
+/* Đặt nền, màu chữ, kích thước và font chữ */
+.navbar {
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #FFFFFF;
+    font-size: 20px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 5%;  
+    box-sizing: border-box;
+    z-index: 1000; 
+    transition: padding 0.3s ease;
+    /* Thêm padding-top cho phần tử tiếp theo tránh bị che khuất */
+    /* margin-bottom: 50px; */
+}
+
+/* Bổ sung padding-top cho phần tử tiếp theo tránh bị navbar che khuất */
+body {
+    padding-top: 60px; 
+}
+
+.navbar-left,
+.navbar-right {
+    display: flex;
+    gap: 30px;  
+}
+
+.navbar-left {
+    justify-content: flex-start;
+}
+
+.navbar-right {
+    justify-content: flex-end;
+}
+
+.nav-link {
+    cursor: pointer;
+    padding: 8px 15px;  
+    font-size: 18px;  
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;  /* Sử dụng transform thay vì padding */
+}
+
+.navbar a {
+    text-decoration: none;  /* Loại bỏ gạch chân */
+    color: inherit;
+}
+
+.nav-link:hover {
+    background-color: #333333;
+    color: #FFD700;
+    border-radius: 5px;
+    /* Sử dụng transform để không thay đổi kích thước phần tử */
+    transform: scale(1.1);  
+}
+/* Định dạng cho phần tử .user-info */
+.user-info {
+    display: flex;
+    flex-direction: column; /* Hoặc 'row' tùy thuộc vào bố cục mong muốn */
+    align-items: flex-start; /* Căn chỉnh nội dung */
+    padding: 10px;
+    background-color: #f9f9f9; /* Màu nền */
+    border-radius: 8px; /* Bo góc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng đổ bóng */
+    margin: 10px 0; /* Khoảng cách ngoài */
+}
+
+/* Định dạng cho tên người dùng */
+.user-name {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px; /* Khoảng cách dưới */
+    color: #333; /* Màu chữ */
+}
+
+/* Định dạng cho nút đăng xuất */
+.auth-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #007bff; /* Màu nền */
+    border: none; /* Loại bỏ viền */
+    border-radius: 5px; /* Bo góc */
+    cursor: pointer; /* Thay đổi con trỏ khi hover */
+    transition: background-color 0.3s ease;
+}
+
+/* Hiệu ứng hover cho nút đăng xuất */
+.auth-button:hover {
+    background-color: #0056b3; /* Màu khi hover */
+}
+
+
+/* Ẩn menu icon trên màn hình lớn */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+    width: 30px;
+    height: 22px;
+    position: relative;
+}
+
+.menu-icon span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    position: absolute;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon span:nth-child(1) {
+    top: 0;
+}
+
+.menu-icon span:nth-child(2) {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.menu-icon span:nth-child(3) {
+    bottom: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: row; /* Đảm bảo hiển thị theo dạng ngang */
+        padding: 4px 8px; /* Điều chỉnh padding cho navbar */
+    }
+
+    .navbar-left,
+    .navbar-right {
+        display: flex; /* Hiển thị menu ngang */
+        width: 100%; /* Đảm bảo navbar chiếm toàn bộ chiều rộng */
+        justify-content: space-between; /* Đảm bảo các phần tử phân bổ đều */
+        gap: 10px; /* Giảm khoảng cách giữa các phần tử */
+    }
+
+    /* Thay đổi kích thước font cho các nút */
+    .nav-link {
+        font-size: 14px; /* Giảm kích thước chữ trên mobile */
+        padding: 8px 12px; /* Điều chỉnh padding cho các nút */
+    }
+    
+    /* Giảm kích thước nút */
+    .nav-link h3 {
+        font-size: 12px; /* Giảm kích thước chữ trong thẻ h3 */
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-icon {
+        display: none; /* Ẩn icon menu trên màn hình lớn */
+    }
+}

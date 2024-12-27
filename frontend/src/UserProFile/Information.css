@@ -1,0 +1,127 @@
+/* Information.css */
+.information-container {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 40px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.information-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    color: #4A90E2;
+    margin-bottom: 40px; /* Tăng khoảng cách dưới tiêu đề */
+}
+
+.information-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px; /* Tăng khoảng cách giữa các trường thông tin */
+    font-size: 16px;
+    position: relative;
+}
+
+.information-item strong {
+    color: #555;
+    width: 30%;
+    margin-right: 20px; /* Tăng khoảng cách giữa label và input */
+}
+
+.information-item span {
+    color: #333;
+    width: 60%;
+}
+
+/* Thay đổi chiều rộng của input và padding */
+.input-field {
+    width: 50%; /* Điều chỉnh độ rộng của input */
+    padding: 12px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    margin-top: 10px;
+}
+
+.input-field:focus {
+    border-color: #4A90E2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(74, 144, 226, 0.5);
+}
+
+/* Căn chỉnh icon bút vào bên phải */
+.edit-button {
+    position: absolute;
+    right: -10px; /* Đưa nút về bên phải một chút */
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px; /* Giảm kích thước của bút */
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    background-color: white;
+    margin-bottom: 2.5px;
+}
+
+.edit-button:hover {
+    background-color: gray;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px; /* Tăng khoảng cách giữa nút lưu và các trường thông tin */
+}
+
+.update-button {
+    padding: 12px 24px;
+    font-size: 16px;
+    background-color: #4A90E2;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.update-button:hover {
+    background-color: #357ABD;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .information-container {
+        padding: 20px;
+    }
+
+    .information-item {
+        font-size: 14px;
+        margin-bottom: 30px; /* Tăng khoảng cách cho thiết bị di động */
+    }
+
+    .information-title {
+        font-size: 24px;
+    }
+
+    .input-field {
+        font-size: 12px;
+        width: 100%;
+    }
+
+    .update-button {
+        width: 100%;
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .edit-button {
+        font-size: 16px;
+    }
+}
